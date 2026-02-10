@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full w-full overflow-hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  * {
+    @apply touch-manipulation;
+  }
+}
+
+/* Portrait mode warning */
+@media (orientation: portrait) {
+  .landscape-only {
+    display: none !important;
+  }
+  
+  .portrait-warning {
+    display: flex !important;
+  }
+}
+
+@media (orientation: landscape) {
+  .portrait-warning {
+    display: none !important;
+  }
+}
